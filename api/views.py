@@ -5,4 +5,4 @@ from rest_framework.response import Response
 
 @api_view(["GET"])
 def pong(request):
-    return Response("pong")
+    return Response({"message": "pong"})
