@@ -13,6 +13,6 @@ class TaskViewSet(viewsets.ModelViewSet):
         filters.SearchFilter,
         filters.OrderingFilter,
     ]
-    filterset_fields = ["is_completed"]
+    filterset_fields = ["is_completed", "priority"]
     search_fields = ["title", "description"]
     ordering_fields = ["created_at", "updated_at", "is_completed"]
