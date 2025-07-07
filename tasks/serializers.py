@@ -15,3 +15,8 @@ class TaskSerializer(serializers.ModelSerializer):
             "updated_at",
         ]
         read_only_fields = ["created_at", "updated_at"]
+
+    def update(self, instance, validated_data):
+        priority = validated_data.get("priority", instance.priority)
+        validated_data["priority"] = priority
+        return super().update(instance, validated_data)
